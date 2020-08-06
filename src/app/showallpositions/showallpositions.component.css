@@ -1,0 +1,47 @@
+a{
+    text-decoration: none;
+}
+
+
+form input{
+    width: 300px !important;
+    height: 30px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+label {
+    display:block;
+  }
+  
+  label span {
+    display:block;
+    color:grey;
+    font-weight: bold;
+  }
+
+  label span.fulltime {
+  /* color: yellow !important; */
+  margin-bottom: -25px;;
+  font-size: 10px;
+  float: right;
+  
+  }
+
+
+  form input[type = "checkbox"]{
+    width: 15px !important;
+    height: 15px !important;
+    float: left;
+    margin-right: 10px !important;
+    text-decoration: none;
+   
+    
+    }
+    form input[type = "checkbox"]:checked{
+      box-shadow:none !important;
+      
+    }
+  
+
+
