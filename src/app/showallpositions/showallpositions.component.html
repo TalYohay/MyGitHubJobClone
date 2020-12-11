@@ -38,7 +38,7 @@
                                 <p class="card-subtitle text-muted mb-2">{{position.created_at | date: short }}</p>
                                 <p class="card-text badge badge-secondary mr-2">{{position.type}}</p>
                                 <p class="card-text badge badge-secondary">{{position.location}}</p>
-                                <p [innerHTML]=p osition.how_to_apply style="word-break:  break-all"> </p>
+                                <p [innerHTML]=position.how_to_apply style="word-break:  break-all"> </p>
 
                                 <p>
                                     <button type="button" class="btn btn-primary" (click)="position.isCollapsed = !position.isCollapsed">
