@@ -1,6 +1,10 @@
 {
     "name": "githubjobclone",
     "version": "0.0.0",
+    "engines": {
+        "npm": "6.x",
+        "node": "12.x"
+    },
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
