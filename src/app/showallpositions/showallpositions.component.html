@@ -1,48 +1,47 @@
-<div class = "container my-4">
+<div class="container my-4">
     <section>
         <h1>Github Jobs</h1>
-        <div *ngIf = "allPositions">
-        
-            
+        <div *ngIf="allPositions">
+
+
             <form class="form-inline align-items-end ml-left mb-4">
-              <div class = form-group>
-            <label>
+                <div class=f orm-group>
+                    <label>
             <span class = "mb-1">Job Description</span> 
               <input class="form-control mr-3" #inputSearch type="text" placeholder="Filter by title, companies, expertise"  [(ngModel)]="DescSearch" [ngModelOptions]="{standalone: true}"  >
             </label>
-          </div>
-          <div class = form-group>
-              <label>
+                </div>
+                <div class=f orm-group>
+                    <label>
                 <span class = "mb-1">Location</span> 
                 <input class="form-control mr-3" #inputSearch type="text" placeholder="Filter by location"  [(ngModel)]="locationSearch"  [ngModelOptions]="{standalone: true}" >
             </label>
-          </div>
-          <div class = form-group>
-            <label>
+                </div>
+                <div class=f orm-group>
+                    <label>
                 <span class = "fulltime">Full Time Only</span> 
                 <input class="form-control mb-2" type="checkbox" [(ngModel)]="fullTimeSearch"  [ngModelOptions]="{standalone: true}" >
             </label>
-          </div>
+                </div>
             </form>
-          
 
-            
-         
-        <div *ngFor = "let position of allPositions | searchFilter : DescSearch:locationSearch:fullTimeSearch | paginate: { itemsPerPage:50, currentPage: pageActual};">
-              
-        <div class="card mb-3">
-            <div class="card-body">
-                <div class = "row">
-               <div class = "col-md-10">     
-              <h5 class="card-title">{{position.title}} - <a href = "{{position.company_url}}" target="_blank"><span class = "text-muted font-weight-light">{{position.company}}</span> </a></h5> 
-              <p class="card-subtitle text-muted mb-2">{{position.created_at | date: short }}</p>
-              <p class="card-text badge badge-secondary mr-2">{{position.type}}</p>
-              <p class="card-text badge badge-secondary">{{position.location}}</p>
-              <p [innerHTML] = position.how_to_apply style = "word-break:  break-all"> </p>
-              
-              <p>
-                <button type="button" class="btn btn-primary" (click)="position.isCollapsed = !position.isCollapsed"
-                       >
+
+
+
+            <div *ngFor="let position of allPositions | searchFilter : DescSearch:locationSearch:fullTimeSearch:test | paginate: { itemsPerPage:50, currentPage: pageActual};">
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h5 class="card-title">{{position.title}} - <a href="{{position.company_url}}" target="_blank"><span class = "text-muted font-weight-light">{{position.company}}</span> </a></h5>
+                                <p class="card-subtitle text-muted mb-2">{{position.created_at | date: short }}</p>
+                                <p class="card-text badge badge-secondary mr-2">{{position.type}}</p>
+                                <p class="card-text badge badge-secondary">{{position.location}}</p>
+                                <p [innerHTML]=p osition.how_to_apply style="word-break:  break-all"> </p>
+
+                                <p>
+                                    <button type="button" class="btn btn-primary" (click)="position.isCollapsed = !position.isCollapsed">
                   <div *ngIf = "!position.isCollapsed">
                     View Details
                   </div>
@@ -50,29 +49,27 @@
                     Hide Details
                     </div>
                 </button>
-              </p>
-              <div  *ngIf="position.isCollapsed">
-                <p [innerHTML]  =  position.description></p>
-              </div>
-              
+                                </p>
+                                <div *ngIf="position.isCollapsed">
+                                    <p [innerHTML]=p osition.description></p>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2">
+                                <img class=" d-none d-md-block " height="70" width="100" alt="{{position.company}}" src="{{position.company_logo}}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class = "col-md-2">
-              <img class = " d-none d-md-block " height = "70" width = "100" alt = "{{position.company}}" src = "{{position.company_logo}}" />
+            <div class="row justify-content-center align-items-center">
+                <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
             </div>
         </div>
-    </div>
-          </div>
+
+        <div *ngIf="!allPositions">
+            <h1> Loading Jobs...</h1>
         </div>
-        <div class ="row justify-content-center align-items-center">
-          <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
-         </div>
-    </div>
 
-    <div *ngIf = "!allPositions">
-        <h1> Loading Jobs...</h1>
-    </div>
-
-</section>
+    </section>
 </div>
-    
-

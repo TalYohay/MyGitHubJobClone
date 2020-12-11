@@ -18,6 +18,7 @@ export class ShowallpositionsComponent implements OnInit {
   locationSearch:any;
   fullTimeSearch:any;
   pageActual:any;
+  test:any
   
   constructor(public positionService: PositionserviceService) { }
 
