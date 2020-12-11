@@ -9,10 +9,15 @@ import { forkJoin } from 'rxjs';
 })
 export class ShowallpositionsComponent implements OnInit {
   positions: Object[] = []
-  positions4: Object
+  positions4: Object;
   isCollapsed = true;
-  positions2: Object
-  allPositions: Object[]
+  positions2: Object;
+  allPositions: Object[];
+  short: any;
+  DescSearch:any;
+  locationSearch:any;
+  fullTimeSearch:any;
+  pageActual:any;
   
   constructor(public positionService: PositionserviceService) { }
 
