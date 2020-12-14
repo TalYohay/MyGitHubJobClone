@@ -23,22 +23,12 @@ export class ShowallpositionsComponent implements OnInit {
   constructor(public positionService: PositionserviceService) { }
 
   ngOnInit() {
-    // this.positionService.getAllPositions().subscribe(data => {
-    //   this.positions = data;
-    //   console.log(this.positions)
-    // })
+
     this.getAllPositions()
 
   }
 
-  // getAllPositions(){
-  //   for(let i = 1; i<=4; i++){
-  //     this.positions = this.positionService.getAllPoistions2(i).subscribe((data: Object[]) => {
-  //       this.positions = data
-  //       console.log("All Positions:", this.positions)
-  //     })
-  //   }
-  // }
+
 
   getAllPositions(){
     for(let i = 1; i<=10; i++){
@@ -52,38 +42,4 @@ export class ShowallpositionsComponent implements OnInit {
     }
   }
 
-  // getAllPositions(){
-  //   let i: number = 0;
-  //   const observablesList = []; 
-  
-  //   while(i < 20){
-  //     observablesList.push(this.positionService.getAllPoistions2(i));
-  //     i++;
-  //   }
-  //   forkJoin(observablesList).subscribe((response) => {
-  //     observablesList  = response
-  //     console.log(response);
-  //   });
-    
-  // }
-  // getPage4(){
-  //   this.positionService.getNextPage4().subscribe(data4 => {
-  //     this.positions4 = data4;
-  //     console.log("Page 4:", this.positions4)
-  //   })
-  // }
 
-
-
-// testingFunction() {
-//   let i: number = 0;
-//   const observablesList = []; 
-
-//   while(i < 20){
-//     observablesList.push(this.positionService.getAllPoistions2(i));
-//     i++;
-//   }
-//   forkJoin(observablesList).subscribe((response) => {
-//     console.log(response);
-//   });
-// }
